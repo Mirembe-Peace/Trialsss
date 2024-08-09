@@ -1,17 +1,25 @@
 #include<stdio.h>
 int main(){
-    //the median 
-    int n = 6;
-    for(int row=1; row<=11; row++){
-        for(int star=1; star<=row; star++){
-         if(n - (star-1) && n + (star-1)){
+    //prompt the user to enter the number of columns
+    int rows;
+    printf("Enter the number of rows:");
+    scanf("%d",&rows);
+
+    int columns = (2*rows)-1;
+    
+    //outer for loop to print the rows
+    for(int i=1; i<=rows; i++){
+    //inner for loop to print the columns
+    for(int j=1; j<=columns; j++){
+        if((j>=rows-(i-1)) && (j<=rows+(i-1))){
             printf("*");
-         }
-         else{
-            printf(" ");
-         }
         }
-        printf("\n");
+        else{
+            printf(" ");
+        }
+    }
+    printf("\n");
     }
     return 0;
 } 
+
